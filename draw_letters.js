@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#caf0f8";
+var systemBackgroundColor = "#ffffff";
 var systemLineColor = "#000090";
 var systemBoxColor = "#00c800";
 const backgroundColor  = "#fee0b0";
@@ -44,12 +44,23 @@ function drawLetter(letterData) {
   let quadPosY = letterData['quadPosY'];
   let quadRot = letterData['quadRot'];
 
-  let quad1Pt2X = letterData['quad1Pt2X'];
-  let quad1Pt2Y = letterData['quad1Pt2Y'];
-  let quad1Pt3X = letterData['quad1Pt3X'];
-  let quad1Pt3Y = letterData['quad1Pt3Y'];
-  let quad1Pt4X = letterData['quad1Pt4X'];
-  let quad1Pt4Y = letterData['quad1Pt4Y'];
+  // let quad1Pt2X = letterData['quad1Pt2X'];
+  // let quad1Pt2Y = letterData['quad1Pt2Y'];
+  // let quad1Pt3X = letterData['quad1Pt3X'];
+  // let quad1Pt3Y = letterData['quad1Pt3Y'];
+  // let quad1Pt4X = letterData['quad1Pt4X'];
+  // let quad1Pt4Y = letterData['quad1Pt4Y'];
+
+  let cirRot = letterData['cirRot'];
+  let slant1 = letterData['slant1'];
+  let rectTran0 = letterData['rectTran0'];
+  let slant2Type = letterData['slant2Type'];
+  let rectTran1 = letterData['rectTran1'];
+  let rectTranX2 = letterData['rectTranX2'];
+  let rectTranY2 = letterData['rectTranY2'];
+  let cirRad = letterData['cirRad'];
+  let rectLen = letterData['rectLen'];
+  let rectGap = letterData['rectGap'];
 
   // draw two circles
   fill(0);
@@ -60,10 +71,97 @@ function drawLetter(letterData) {
   angleMode(DEGREES);
   stroke(0);
   strokeWeight(3);
-  // noFill();
+  noFill();
 
-  quad(0, 100, quad1Pt2X, quad1Pt2Y, quad1Pt3X, quad1Pt3Y, quad1Pt4X, quad1Pt4Y);
+  // quad(0, 100, quad1Pt2X, quad1Pt2Y, quad1Pt3X, quad1Pt3Y, quad1Pt4X, quad1Pt4Y);
 
+  circle(50, 100, 80);
+  fill(255);
+  noStroke();
+  push();
+    translate(50, 100);
+    rotate(cirRot);
+    push();
+    translate(34, 0);
+    circle(0, 0, 60);
+    pop();
+    push();
+    rotate(cirRot / 2);
+    translate(34, 0);
+    circle(0, 0, rectTran1  + 30);
+    stroke(0);
+    circle(0, 0, cirRad);
+    pop();
+  pop();
+
+  fill(0);
+  // push();
+  // if (rectTranX2 < 0) {
+  //   translate(-1 * (rectTranX2 / 4) + 25, - rectTranY2 + 100);
+  // } else {
+  //   translate((rectTranX2 / 4) + 25, - rectTranY2 + 100);
+  // }
+  //   rotate(rectTranX2);
+  //   rect(0, 0, 30 - rectTran1, 3);
+  // pop();
+  // push();
+  // if (rectTranX2 < 0) {
+  //   translate(-1 * (-rectTranX2 / 4) + 75, - rectTranY2 + 100);
+  // } else {
+  //   translate((-rectTranX2 / 4) + 75, - rectTranY2 + 100);
+  // }
+  //   rotate(-rectTranX2);
+  //   rect(0, 0, 30 - rectTran1, 3);
+  // pop();
+  rectMode(CORNER);
+  push();
+  if (rectTranX2 < 0) {
+    translate(-1 * (rectTranX2 / 4) + 50, - rectTranY2 + 100);
+  } else {
+    translate((rectTranX2 / 4) + 50, - rectTranY2 + 100);
+  }
+    rotate(rectTranX2);
+    fill(255, 0, 0);
+    rect(0, 0, -rectLen, 3);
+  pop();
+  if(rectLen > 0) {
+    push();
+    if (rectTranX2 < 0) {
+      translate(-1 * (-rectTranX2 / 4) + 50, - rectTranY2 + 100);
+    } else {
+      translate((-rectTranX2 / 4) + 50, - rectTranY2 + 100);
+    }
+      rotate(-rectTranX2);
+      rect(0, 0, rectLen, 3);
+    pop();
+  }
+  
+  rectMode(CENTER);
+  push()
+    translate(rectTran0, 100);
+    rotate(slant1);
+    rect(3 - rectGap, 0, 3, (rectTran0 * 1) + 30);
+    rect(3 + rectGap, 0, 3, (rectTran0 * 0.6) + 30);
+    // if (slant2Type) {
+      // translate(10, 0); // good for 'T'
+      // rotate(-slant1);
+      // rect(0, 0, 3, 80);
+    // } else {
+      // rotate(-slant1 * 2); // Acender/Decender
+      // translate(0, 50);
+      // rect(0, 0, 3, 80);
+    // }
+  pop();
+
+  push()
+    // if (slant1 < 90) {
+      translate(rectTran1, 100);
+    // } else {
+    //   translate(rectTran1 - (slant1 - 90), 100);
+    // }
+    rotate(-slant1);
+    rect(0, 0, 3, 30 + rectTran1);
+  pop();
 
 
 
