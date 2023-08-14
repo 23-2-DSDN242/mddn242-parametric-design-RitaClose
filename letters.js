@@ -1,18 +1,26 @@
 const alphabet = {
   "default": {
-    "size1": 20,
-    "offsetx1": 0,
-    "offsety1": 0,
-    "size2": 30,
-    "offsetx2": 0,
-    "offsety2": - 10,
-    "size3": 40,
-    "offsetx3": 0,
-    "offsety3": 20,
-    
-    "cirX1": 0,
-    "cirY1": 0,
-    "rad1": 50,
+    "cirRot": 180,
+    "slant1": 244.8,
+    "rectTran1": 49,
+    "rectTranX2": 35.9,
+    "rectTranY2": 30,
+    "cirRad": 19.2,
+    "rectTran0": 50,
+    "rectLen": 19,
+    "rectGap": 4,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+
+    // "cirRot": 360,
+    // "slant1": 154.8,
+    // "rectTran1": 13,
+    // "rectTranX2": 0,
+    // "rectTranY2": 0,
+    // "cirRad": 42.4,
+    // "rectTran0": 50,
+    // "rectLen": 37,
+    // "rectGap": 0
   },
   "A": {
     // "quadPosX": 100,
@@ -39,6 +47,8 @@ const alphabet = {
     "rectTran0": 50,
     "rectLen": 35,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
     
     
   },
@@ -59,6 +69,8 @@ const alphabet = {
     "rectTran0": 45,
     "rectLen": 15,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "C": {
     // "cirX1": 50,
@@ -78,6 +90,8 @@ const alphabet = {
     "rectTran0": 18,
     "rectLen": 0,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "D": {
     "cirRot": 118.8,
@@ -89,6 +103,8 @@ const alphabet = {
     "rectTran0": 44,
     "rectLen": 0,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "E": {
     // "quadPosX": -10,
@@ -103,6 +119,8 @@ const alphabet = {
     "rectTran0": 47,
     "rectLen": -20,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "F": {
     "cirRot": 360,
@@ -114,6 +132,8 @@ const alphabet = {
     "rectTran0": 48,
     "rectLen": -16,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "G": {
     "cirRot": 334.8,
@@ -125,6 +145,8 @@ const alphabet = {
     "rectTran0": 22,
     "rectLen": -39,
     "rectGap": 0,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "H": {
     "cirRot": 324,
@@ -136,17 +158,21 @@ const alphabet = {
     "rectTran0": 36,
     "rectLen": 49,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "I": {
-    "cirRot": 183.6,
+    "cirRot": 360,
     "slant1": 180,
-    "rectTran1": 51,
+    "rectTran1": 54,
     "rectTranX2": 0,
-    "rectTranY2": 0,
-    "cirRad": 40,
-    "rectTran0": 56.9,
-    "rectLen": 1,
-    "rectGap": 3,
+    "rectTranY2": 12.1,
+    "cirRad": 0,
+    "rectTran0": 52,
+    "rectLen": 0,
+    "rectGap": 0,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "J": {
     "cirRot": 237.6,
@@ -158,6 +184,8 @@ const alphabet = {
     "rectTran0": 60,
     "rectLen": 29,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "K": {
     "cirRot": 309.6,
@@ -169,6 +197,8 @@ const alphabet = {
     "rectTran0": 49,
     "rectLen": 44,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 2,
   },
   "L": {
     "cirRot": 302.4,
@@ -180,6 +210,8 @@ const alphabet = {
     "rectTran0": 50,
     "rectLen": -43,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "M": {
     "cirRot": 306,
@@ -190,13 +222,23 @@ const alphabet = {
     "cirRad": 0,
     "rectTran0": 50,
     "rectLen": 38,
-    "rectGap": 20
+    "rectGap": 20,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
-  // "N": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
+  "N": {
+    "cirRot": 82.8,
+    "slant1": 180,
+    "rectTran1": 42,
+    "rectTranX2": 59.4,
+    "rectTranY2": 10.0,
+    "cirRad": 0,
+    "rectTran0": 72,
+    "rectLen": -50,
+    "rectGap": -21.0,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
   "O": {
     "cirRot": 216,
     "slant1": 298.8,
@@ -206,7 +248,9 @@ const alphabet = {
     "cirRad": 33.6,
     "rectTran0": 17,
     "rectLen": 0,
-    "rectGap": 3
+    "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "P": {
     "cirRot": 212.39,
@@ -217,7 +261,9 @@ const alphabet = {
     "cirRad": 48,
     "rectTran0": 50,
     "rectLen": -32,
-    "rectGap": 4
+    "rectGap": 4,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
   "Q": {
     "cirRot": 25.2,
@@ -228,7 +274,9 @@ const alphabet = {
     "cirRad": 0,
     "rectTran0": 50,
     "rectLen": -50,
-    "rectGap": 3
+    "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 0,
   },
   "R": {
     "cirRot": 212.39,
@@ -239,28 +287,72 @@ const alphabet = {
     "cirRad": 45.59,
     "rectTran0": 50,
     "rectLen": -50,
-    "rectGap": 4
+    "rectGap": 4,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
-  // "S": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "T": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "U": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "V": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
+  "S": {
+    "cirRot": 360,
+    "slant1": 133.2,
+    "rectTran1": 23,
+    "rectTranX2": 0,
+    "rectTranY2": -26,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 0,
+    "rectGap": 4,
+    "cirStroke": 1.5,
+    "rectWidth": 0,
+  },
+  "T": {
+    "cirRot": 273.6,
+    "slant1": 0,
+    "rectTran1": 50,
+    "rectTranX2": 0,
+    "rectTranY2": 36,
+    "cirRad": 12.8,
+    "rectTran0": 50,
+    "rectLen": 37,
+    "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 0,
+  },
+  "U": {
+    "cirRot": 180,
+    "slant1": 180,
+    "rectTran1": 34,
+    "rectTranX2": -61.2,
+    "rectTranY2": -13,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 32,
+    "rectGap": 20,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
+  "V": {
+    // "cirRot": 180,
+    // "slant1": 21.59,
+    // "rectTran1": 25,
+    // "rectTranX2": -68.4,
+    // "rectTranY2": 0,
+    // "cirRad": 55.19,
+    // "rectTran0": 50,
+    // "rectLen": 50,
+    // "rectGap": -20
+
+    "cirRot": 158.4,
+    "slant1": 21.59,
+    "rectTran1": 28.99,
+    "rectTranX2": -68.4,
+    "rectTranY2": 30,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 50,
+    "rectGap": -3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
   "W": {
     "cirRot": 255.6,
     "slant1": 162,
@@ -271,6 +363,8 @@ const alphabet = {
     "rectTran0": 50,
     "rectLen": 34,
     "rectGap": -21,
+    "cirStroke": 0,
+    "rectWidth": 3,
   },
   "X": {
     "cirRot": 190.8,
@@ -282,32 +376,66 @@ const alphabet = {
     "rectTran0": 50,
     "rectLen": -1,
     "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
   },
-  // "Y": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "Z": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
+  "Y": {
+    "cirRot": 158.4,
+    "slant1": 21.59,
+    "rectTran1": 28.99,
+    "rectTranX2": -68.4,
+    "rectTranY2": 30,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 50,
+    "rectGap": -3,
+    "cirStroke": 1.5,
+    "rectWidth": 0,
+  },
+  "Z": {
+    "cirRot": 360,
+    "slant1": 208.79,
+    "rectTran1": 41,
+    "rectTranX2": 0,
+    "rectTranY2": 0,
+    "cirRad": 0,
+    "rectTran0": 51,
+    "rectLen": 16,
+    "rectGap": 0,
+    "cirStroke": 1.5,
+    "rectWidth": 0,
+  },
   // "0": {
   //   "size": 40,
   //   "offsetx": 0,
   //   "offsety": 17
   // },
-  // "1": {
-  //   "size": 40,
-  //   "offsetx": 0,
-  //   "offsety": 17
-  // },
-  // "2": {
-  //   "size": 40,
-  //   "offsetx": 0,
-  //   "offsety": 17
-  // },
+  "1": {
+    "cirRot": 302.4,
+    "slant1": 180,
+    "rectTran1": 50,
+    "rectTranX2": 0,
+    "rectTranY2": 0,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 0,
+    "rectGap": 0,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
+  "2": {
+    "cirRot": 334.8,
+    "slant1": 165.6,
+    "rectTran1": 50,
+    "rectTranX2": 0,
+    "rectTranY2": -38,
+    "cirRad": 0,
+    "rectTran0": 50,
+    "rectLen": 34,
+    "rectGap": 0,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
   // "3": {
   //   "size": 40,
   //   "offsetx": 0,
@@ -333,11 +461,19 @@ const alphabet = {
   //   "offsetx": 0,
   //   "offsety": 17
   // },
-  // "8": {
-  //   "size": 40,
-  //   "offsetx": 0,
-  //   "offsety": 17
-  // },
+  "8": {
+    "cirRot": 61.2,
+    "slant1": 90,
+    "rectTran1": 50,
+    "rectTranX2": 0,
+    "rectTranY2": 0,
+    "cirRad": 55.19,
+    "rectTran0": 50,
+    "rectLen": 0,
+    "rectGap": 3,
+    "cirStroke": 1.5,
+    "rectWidth": 3,
+  },
   // "9": {
   //   "size": 40,
   //   "offsetx": 0,

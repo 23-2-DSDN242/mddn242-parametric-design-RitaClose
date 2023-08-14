@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#ffffff";
+var systemBackgroundColor = 10;
 var systemLineColor = "#000090";
 var systemBoxColor = "#00c800";
 const backgroundColor  = "#fee0b0";
@@ -62,6 +62,9 @@ function drawLetter(letterData) {
   let rectLen = letterData['rectLen'];
   let rectGap = letterData['rectGap'];
 
+  let rectWidth = letterData['rectWidth'];
+  let cirStroke = letterData['cirStroke'];
+
   // draw two circles
   fill(0);
   noStroke();
@@ -74,27 +77,43 @@ function drawLetter(letterData) {
   noFill();
 
   // quad(0, 100, quad1Pt2X, quad1Pt2Y, quad1Pt3X, quad1Pt3Y, quad1Pt4X, quad1Pt4Y);
-
+  fill(70);
+  stroke(190);
+  strokeWeight(5);
+  circle(50, 100, 90);
+  stroke(230);
+  strokeWeight(3);
+  noFill();
   circle(50, 100, 80);
-  fill(255);
+  fill(10);
   noStroke();
   push();
     translate(50, 100);
     rotate(cirRot);
     push();
     translate(34, 0);
+    // stroke(180);
+    // strokeWeight(0.25);
     circle(0, 0, 60);
     pop();
     push();
     rotate(cirRot / 2);
     translate(34, 0);
-    circle(0, 0, rectTran1  + 30);
-    stroke(0);
+    // stroke(180);
+    // strokeWeight(0.25);
+    circle(0, 0, rectTran1  + 20);
+    if (cirRad == 0) {
+      noStroke();
+      noFill();
+    } else {
+      stroke(255);
+      strokeWeight(cirStroke);
+    }
     circle(0, 0, cirRad);
     pop();
   pop();
 
-  fill(0);
+  fill(255);
   // push();
   // if (rectTranX2 < 0) {
   //   translate(-1 * (rectTranX2 / 4) + 25, - rectTranY2 + 100);
@@ -121,8 +140,8 @@ function drawLetter(letterData) {
     translate((rectTranX2 / 4) + 50, - rectTranY2 + 100);
   }
     rotate(rectTranX2);
-    fill(255, 0, 0);
-    rect(0, 0, -rectLen, 3);
+    fill(180);
+    rect(0, 0, -rectLen, 3, 5);
   pop();
   if(rectLen > 0) {
     push();
@@ -132,7 +151,7 @@ function drawLetter(letterData) {
       translate((-rectTranX2 / 4) + 50, - rectTranY2 + 100);
     }
       rotate(-rectTranX2);
-      rect(0, 0, rectLen, 3);
+      rect(0, 0, rectLen, 3, 5);
     pop();
   }
   
@@ -140,8 +159,8 @@ function drawLetter(letterData) {
   push()
     translate(rectTran0, 100);
     rotate(slant1);
-    rect(3 - rectGap, 0, 3, (rectTran0 * 1) + 30);
-    rect(3 + rectGap, 0, 3, (rectTran0 * 0.6) + 30);
+    rect(3 - rectGap, 0, 3, (rectTran0 * 1) + 30, 5);
+    rect(3 + rectGap, 0, 3, (rectTran0 * 0.6) + 30, 5);
     // if (slant2Type) {
       // translate(10, 0); // good for 'T'
       // rotate(-slant1);
@@ -160,7 +179,7 @@ function drawLetter(letterData) {
     //   translate(rectTran1 - (slant1 - 90), 100);
     // }
     rotate(-slant1);
-    rect(0, 0, 3, 30 + rectTran1);
+    rect(0, 0, rectWidth, 30 + rectTran1, 5);
   pop();
 
 
@@ -202,7 +221,7 @@ function interpolate_letter(percent, oldObj, newObj) {
 }
 
 var swapWords = [
-  "ABBAABBA",
-  "CAB?CAB?",
-  "BAAAAAAA"
+  "BATTLEAXE",
+  "AXECRAFT",
+  "QUESTING",
 ]
