@@ -29,6 +29,7 @@ const sliderInfo = [
   ["rectGap", -50, 50],
   ["rectWidth", 0, 3],
   ["cirStroke", 0, 3],
+  ["coverCir", 0, 80],
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.

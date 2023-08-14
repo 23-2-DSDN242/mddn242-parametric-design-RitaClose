@@ -22,34 +22,6 @@ function drawLetter(letterData) {
   strokeWeight(4);
 
   // determine parameters for second circle
-  let size1 = letterData["size1"];
-  let pos1x = letterData["offsetx1"];
-  let pos1y = letterData["offsety1"];
-  let size2 = letterData["size2"];
-  let pos2x = letterData["offsetx2"];
-  let pos2y = letterData["offsety2"];
-  let size3 = letterData["size3"];
-  let pos3x = letterData["offsetx3"];
-  let pos3y = letterData["offsety3"];
-
-  let cirX1 = letterData['cirX1'];
-  let cirY1 = letterData['cirY1'];
-  let rad1 = letterData['rad1'];
-  let cirX2 = letterData['cirX2'];
-  let cirY2 = letterData['cirY2'];
-  let rad2a = letterData['rad2a'];
-  let rad2b = letterData['rad2b'];
-
-  let quadPosX = letterData['quadPosX'];
-  let quadPosY = letterData['quadPosY'];
-  let quadRot = letterData['quadRot'];
-
-  // let quad1Pt2X = letterData['quad1Pt2X'];
-  // let quad1Pt2Y = letterData['quad1Pt2Y'];
-  // let quad1Pt3X = letterData['quad1Pt3X'];
-  // let quad1Pt3Y = letterData['quad1Pt3Y'];
-  // let quad1Pt4X = letterData['quad1Pt4X'];
-  // let quad1Pt4Y = letterData['quad1Pt4Y'];
 
   let cirRot = letterData['cirRot'];
   let slant1 = letterData['slant1'];
@@ -64,6 +36,7 @@ function drawLetter(letterData) {
 
   let rectWidth = letterData['rectWidth'];
   let cirStroke = letterData['cirStroke'];
+  let coverCir = letterData['coverCir'];
 
   // draw two circles
   fill(0);
@@ -91,17 +64,21 @@ function drawLetter(letterData) {
     translate(50, 100);
     rotate(cirRot);
     push();
-    translate(34, 0);
-    // stroke(180);
-    // strokeWeight(0.25);
-    circle(0, 0, 60);
+      translate(34, 0);
+      // stroke(180);
+      // strokeWeight(0.25);
+      circle(0, 0, 60);
+      push();
+        translate(0, 35);
+        circle(0, 0, coverCir);
+      pop();
     pop();
     push();
     rotate(cirRot / 2);
     translate(34, 0);
     // stroke(180);
     // strokeWeight(0.25);
-    circle(0, 0, rectTran1  + 20);
+    circle(0, 0, rectTran1  + 25);
     if (cirRad == 0) {
       noStroke();
       noFill();
@@ -140,7 +117,7 @@ function drawLetter(letterData) {
     translate((rectTranX2 / 4) + 50, - rectTranY2 + 100);
   }
     rotate(rectTranX2);
-    fill(180);
+    fill(255, 105, 180);
     rect(0, 0, -rectLen, 3, 5);
   pop();
   if(rectLen > 0) {
@@ -160,6 +137,11 @@ function drawLetter(letterData) {
     translate(rectTran0, 100);
     rotate(slant1);
     rect(3 - rectGap, 0, 3, (rectTran0 * 1) + 30, 5);
+    if (rectGap == 0) {
+      fill(255);
+    } else {
+      fill(255, 105, 180);
+    }
     rect(3 + rectGap, 0, 3, (rectTran0 * 0.6) + 30, 5);
     // if (slant2Type) {
       // translate(10, 0); // good for 'T'
@@ -214,9 +196,18 @@ function drawLetter(letterData) {
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
-  new_letter["size"]    = map(percent, 0, 100, oldObj["size"], newObj["size"]);
-  new_letter["offsetx"] = map(percent, 0, 100, oldObj["offsetx"], newObj["offsetx"]);
-  new_letter["offsety"] = map(percent, 0, 100, oldObj["offsety"], newObj["offsety"]);
+  new_letter["cirRot"]    = map(percent, 0, 100, oldObj["cirRot"], newObj["cirRot"]);
+  new_letter["slant1"] = map(percent, 0, 100, oldObj["slant1"], newObj["slant1"]);
+  new_letter["rectTran0"] = map(percent, 0, 100, oldObj["rectTran0"], newObj["rectTran0"]);
+  new_letter["slant2Type"]    = map(percent, 0, 100, oldObj["slant2Type"], newObj["slant2Type"]);
+  new_letter["rectTran1"] = map(percent, 0, 100, oldObj["rectTran1"], newObj["rectTran1"]);
+  new_letter["rectTranX2"] = map(percent, 0, 100, oldObj["rectTranX2"], newObj["rectTranX2"]);
+  new_letter["rectTranY2"] = map(percent, 0, 100, oldObj["rectTranY2"], newObj["rectTranY2"]);
+  new_letter["cirRad"]    = map(percent, 0, 100, oldObj["cirRad"], newObj["cirRad"]);
+  new_letter["rectLen"] = map(percent, 0, 100, oldObj["rectLen"], newObj["rectLen"]);
+  new_letter["rectGap"] = map(percent, 0, 100, oldObj["rectGap"], newObj["rectGap"]);
+  new_letter["rectWidth"] = map(percent, 0, 100, oldObj["rectWidth"], newObj["rectWidth"]);
+  new_letter["cirStroke"] = map(percent, 0, 100, oldObj["cirStroke"], newObj["cirStroke"]);
   return new_letter;
 }
 
