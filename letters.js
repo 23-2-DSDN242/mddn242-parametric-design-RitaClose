@@ -470,10 +470,10 @@ const alphabet = {
     "rectTranX2": 0,
     "rectTranY2": 0,
     "cirRad": 52.8,
-    "rectTran0": 50,
+    "rectTran0": 55,
     "rectLen": 0,
     "rectGap": 0,
-    "rectWidth": 3,
+    "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
   },
@@ -494,16 +494,16 @@ const alphabet = {
   "3": {
     "cirRot": 360,
     "slant1": 180,
-    "rectTran1": 47,
+    "rectTran1": 44,
     "rectTranX2": 0,
     "rectTranY2": 0,
-    "cirRad": 52.8,
-    "rectTran0": 50,
+    "cirRad": 0,
+    "rectTran0": 59,
     "rectLen": 0,
-    "rectGap": 7.9,
+    "rectGap": 4,
     "rectWidth": 3,
-    "cirStroke": 0,
-    "coverCir": 0,
+    "cirStroke": 2.19,
+    "coverCir": 0
   },
   "4": {
     "cirRot": 360,
@@ -546,7 +546,7 @@ const alphabet = {
     // "rectWidth": 3,
     // "cirStroke": 0
 
-    "cirRot": 360,
+    "cirRot": 0,
     "slant1": 0,
     "rectTran1": 76,
     "rectTranX2": -66.6,
@@ -560,7 +560,7 @@ const alphabet = {
     "coverCir": 0,
   },
   "7": {
-    "cirRot": 360,
+    "cirRot": 0,
     "slant1": 0,
     "rectTran1": 76,
     "rectTranX2": -66.6,
