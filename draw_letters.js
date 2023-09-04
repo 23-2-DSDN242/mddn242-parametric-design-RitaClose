@@ -139,7 +139,6 @@ function drawLetter(letterData) {
   pop();
 
   // Small Angle Rectangles
-  fill(255);
   rectMode(CORNER);
   push();
   if (rectTranX2 < 0) {
@@ -148,10 +147,12 @@ function drawLetter(letterData) {
     translate((rectTranX2 / 4) + 50, - rectTranY2 + 100);
   }
     rotate(rectTranX2);
-    fill(255, 105, 180);
+    fill(153, 18, 101);
     rect(0, 0, -rectLen, 3, 5);
-    
+    fill(255, 105, 180);
+    rect(0, -1, -rectLen, 2, 5);
   pop();
+
   if(rectLen > 0) {
     push();
     if (rectTranX2 < 0) {
@@ -160,7 +161,10 @@ function drawLetter(letterData) {
       translate((-rectTranX2 / 4) + 50, - rectTranY2 + 100);
     }
       rotate(-rectTranX2);
+      fill(130);
       rect(0, 0, rectLen, 3, 5);
+      fill(240);
+      rect(0, -1, rectLen, 2, 5);
     pop();
   }
   
@@ -299,3 +303,16 @@ var swapWords = [
   "QUESTING",
   "TOMAHAWK",
 ]
+
+//if (percent < 50) // have new letter be going to different letter than end
+//new_letter['coverCir'] = oldObj["coverCir"]; // stay as last position.
+// newpercent = percent * -1 for negative/opposite directions
+// look up easing functions.
+
+// copy default letter into draw_letters 
+/* let home_pos = {
+  defaultletter params.
+}
+then put percent 0-50 to home_pos then 50-100 to newPos
+
+*/
