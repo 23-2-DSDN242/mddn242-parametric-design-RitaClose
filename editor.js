@@ -1,22 +1,23 @@
-/*******
- * define this "sliderInfo" variable
- * have an entry for each slider you want
- * and each row should be:
- * ["object_field", minimum_bound, maximum_bound]
- */
+
 const sliderInfo = [
+  //Outer Circles
   ["cirRot", 0, 360],
-  ["slant1", 0, 360],
-  ["rectTran1", 0, 100],
-  ["rectTranX2", -90, 90],
-  ["rectTranY2", -100, 100],
+  //Inner Circle
   ["cirRad", 0, 80],
-  ["rectTran0", 0, 100],
-  ["rectLen", -50, 50],
-  ["rectGap", -50, 50],
-  ["rectWidth", 0, 3],
   ["cirStroke", 0, 3],
   ["coverCir", 0, 80],
+  //Rect 1
+  ["rect1X", 0, 100],
+  ["rectWidth", 0, 3],
+  //Rect 2
+  ["rect1Angle", 0, 360],
+  ["rect2X", 0, 100],
+  ["rectGap", -50, 50],
+  //Rect 3
+  ["rectLen", -50, 50],
+  ["rect3Angle", -90, 90],
+  ["rect3Y", -100, 100],
+
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.

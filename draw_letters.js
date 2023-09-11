@@ -17,12 +17,11 @@ function drawLetter(letterData) {
   // determine parameters for second circle
 
   let cirRot = letterData['cirRot'];
-  let slant1 = letterData['slant1'];
-  let rectTran0 = letterData['rectTran0'];
-  let slant2Type = letterData['slant2Type'];
-  let rectTran1 = letterData['rectTran1'];
-  let rectTranX2 = letterData['rectTranX2'];
-  let rectTranY2 = letterData['rectTranY2'];
+  let rect1Angle = letterData['rect1Angle'];
+  let rect2X = letterData['rect2X'];
+  let rect1X = letterData['rect1X'];
+  let rect3Angle = letterData['rect3Angle'];
+  let rect3Y = letterData['rect3Y'];
   let cirRad = letterData['cirRad'];
   let rectLen = letterData['rectLen'];
   let rectGap = letterData['rectGap'];
@@ -92,7 +91,7 @@ function drawLetter(letterData) {
     rotate(cirRot / 2);
     translate(34, 0);
 
-    circle(0, 0, rectTran1 + 25);
+    circle(0, 0, rect1X + 25);
     
     // White Circle
     if (cirRad == 0) {
@@ -109,12 +108,12 @@ function drawLetter(letterData) {
   // Small Angle Rectangles
   rectMode(CORNER);
   push();
-  if (rectTranX2 < 0) {
-    translate(-1 * (rectTranX2 / 4) + 50, - rectTranY2 + 100);
+  if (rect3Angle < 0) {
+    translate(-1 * (rect3Angle / 4) + 50, - rect3Y + 100);
   } else {
-    translate((rectTranX2 / 4) + 50, - rectTranY2 + 100);
+    translate((rect3Angle / 4) + 50, - rect3Y + 100);
   }
-    rotate(rectTranX2);
+    rotate(rect3Angle);
     fill(153, 18, 101);
     rect(0, 0, -rectLen, 3, 5);
     fill(255, 105, 180);
@@ -123,12 +122,12 @@ function drawLetter(letterData) {
 
   if(rectLen > 0) {
     push();
-    if (rectTranX2 < 0) {
-      translate(-1 * (-rectTranX2 / 4) + 50, - rectTranY2 + 100);
+    if (rect3Angle < 0) {
+      translate(-1 * (-rect3Angle / 4) + 50, - rect3Y + 100);
     } else {
-      translate((-rectTranX2 / 4) + 50, - rectTranY2 + 100);
+      translate((-rect3Angle / 4) + 50, - rect3Y + 100);
     }
-      rotate(-rectTranX2);
+      rotate(-rect3Angle);
       fill(130);
       rect(0, 0, rectLen, 3, 5);
       fill(240);
@@ -139,15 +138,15 @@ function drawLetter(letterData) {
   // Double Line Rectangles
   rectMode(CENTER);
   push()
-    translate(rectTran0, 100);
-    rotate(slant1);
+    translate(rect2X, 100);
+    rotate(rect1Angle);
 
     strokeWeight(1);
     stroke(84, 13, 57);
     fill(153, 18, 101);
 
-    rect(3 + rectGap, 0, 3, (rectTran0 * 0.6) + 30, 5);
-    for (i = 0; i < (30 + rectTran0 * 0.6) / 12; i ++) {
+    rect(3 + rectGap, 0, 3, (rect2X * 0.6) + 30, 5);
+    for (i = 0; i < (30 + rect2X * 0.6) / 12; i ++) {
       noStroke();
       fill(255, 105, 180);
       rect(3 + rectGap, i * 6, 3, 3);
@@ -157,13 +156,13 @@ function drawLetter(letterData) {
       rect(3 + rectGap, -i * 6 - 2, 3, 1);
     }
     fill(210);
-    rect(2 - rectGap, 0, 0.5, rectTran0 + 25, 5);
+    rect(2 - rectGap, 0, 0.5, rect2X + 25, 5);
 
     fill(80);
     stroke(50);
 
-    rect(3 - rectGap, 0, 3, rectTran0 + 30, 5);
-    for (i = 0; i < (30 + rectTran0) / 12; i ++) {
+    rect(3 - rectGap, 0, 3, rect2X + 30, 5);
+    for (i = 0; i < (30 + rect2X) / 12; i ++) {
       noStroke();
       fill(150);
       rect(3 - rectGap, i * 6, 3, 3);
@@ -173,20 +172,20 @@ function drawLetter(letterData) {
       rect(3 - rectGap, -i * 6 - 2, 3, 1);
     }
     fill(210);
-    rect(2 - rectGap, 0, 0.5, rectTran0 + 25, 5);
+    rect(2 - rectGap, 0, 0.5, rect2X + 25, 5);
   pop();
 
   // Single Line Rectangle
   push()
-    translate(rectTran1, 100);
-    rotate(-slant1);
+    translate(rect1X, 100);
+    rotate(-rect1Angle);
     if (rectWidth != 0) {
       fill(80);
       stroke(50);
       strokeWeight(1);
     }
-    rect(0, 0, rectWidth, 30 + rectTran1, 5);
-    for (i = 0; i < (30 + rectTran1) / 12; i ++) {
+    rect(0, 0, rectWidth, 30 + rect1X, 5);
+    for (i = 0; i < (30 + rect1X) / 12; i ++) {
       noStroke();
       fill(150);
       rect(0, i * 6, rectWidth, 3);
@@ -196,7 +195,7 @@ function drawLetter(letterData) {
       rect(0, -i * 6 - 2, rectWidth, 1);
     }
     fill(200);
-    rect(rectWidth / 3 * -1, 0, rectWidth / 3, 28 + rectTran1, 5);
+    rect(rectWidth / 3 * -1, 0, rectWidth / 3, 28 + rect1X, 5);
   pop();
 
   for (i = 0; i < 10; i ++) {
@@ -211,12 +210,12 @@ function drawLetter(letterData) {
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
   new_letter["cirRot"] = map(percent, 0, 100, oldObj["cirRot"], newObj["cirRot"]);
-  new_letter["slant1"] = map(percent, 0, 100, oldObj["slant1"], newObj["slant1"]);
-  new_letter["rectTran0"] = map(percent, 0, 100, oldObj["rectTran0"], newObj["rectTran0"]);
+  new_letter["rect1Angle"] = map(percent, 0, 100, oldObj["rect1Angle"], newObj["rect1Angle"]);
+  new_letter["rect2X"] = map(percent, 0, 100, oldObj["rect2X"], newObj["rect2X"]);
   new_letter["slant2Type"] = map(percent, 0, 100, oldObj["slant2Type"], newObj["slant2Type"]);
-  new_letter["rectTran1"] = map(percent, 0, 100, oldObj["rectTran1"], newObj["rectTran1"]);
-  new_letter["rectTranX2"] = map(percent, 0, 100, oldObj["rectTranX2"], newObj["rectTranX2"]);
-  new_letter["rectTranY2"] = map(percent, 0, 100, oldObj["rectTranY2"], newObj["rectTranY2"]);
+  new_letter["rect1X"] = map(percent, 0, 100, oldObj["rect1X"], newObj["rect1X"]);
+  new_letter["rect3Angle"] = map(percent, 0, 100, oldObj["rect3Angle"], newObj["rect3Angle"]);
+  new_letter["rect3Y"] = map(percent, 0, 100, oldObj["rect3Y"], newObj["rect3Y"]);
   new_letter["cirRad"] = map(percent, 0, 100, oldObj["cirRad"], newObj["cirRad"]);
   new_letter["rectLen"] = map(percent, 0, 100, oldObj["rectLen"], newObj["rectLen"]);
   new_letter["rectGap"] = map(percent, 0, 100, oldObj["rectGap"], newObj["rectGap"]);
