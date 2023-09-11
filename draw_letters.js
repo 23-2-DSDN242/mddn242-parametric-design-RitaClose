@@ -1,16 +1,24 @@
 /* these are optional special variables which will change the system */
 var systemBackgroundColor = 10;
-var systemLineColor = "#000090";
+var systemLineColor = "#414241";
 var systemBoxColor = "#00c800";
-const backgroundColor  = "#fee0b0";
+const backgroundColor  = 10;
 const strokeColor      = "#ffffff";
 
-/* internal constants */
-const darkBlue  = "#faa9f0";
-const lightBlue  = "#faa9a9";
-
 function drawLetter(letterData) {
-  // color/stroke setup
+  // Color variables
+  const outerCircle = backgroundColor;
+  colorMode(HSB);
+  let millisec = second() * 10;
+  var pink = 10 + millisec;
+  // var lightPink = color(255, 105, 180);
+  var lightPink = color(pink, 59, 100);
+  var darkPink = color(pink - 10, 88, 60);
+  // var darkPink = color(153, 18, 101);
+  colorMode(RGB);
+  var baseGrey = 150;
+
+  // Brush Setup
   stroke(strokeColor);
   strokeWeight(4);
 
@@ -31,8 +39,6 @@ function drawLetter(letterData) {
   let coverCir = letterData['coverCir'];
 
   // draw two circles
-  fill(0);
-  noStroke();
   rectMode(CENTER);
   angleMode(DEGREES);
   stroke(0);
@@ -41,6 +47,7 @@ function drawLetter(letterData) {
 
   //Outer Blade
   let c1 = color(255, 255, 255, 255);
+  // colorMode(HSB);
   let c2 = color(255, 255, 255, 0);
   for (i = 0; i < 10; i ++) {
     let gradient1 = lerpColor(c1, c2, i / 10);
@@ -49,7 +56,7 @@ function drawLetter(letterData) {
     stroke(gradient1);
     circle(50, 100, 94 + i);
   }
-  
+  // colorMode(RGB);
   //Blade Background
   fill(70);
   stroke(190);
@@ -72,7 +79,7 @@ function drawLetter(letterData) {
   strokeWeight(3);
   noFill();
   circle(50, 100, 80);
-  fill(10);
+  fill(outerCircle);
   noStroke();
 
   // Booleen Circles
@@ -114,9 +121,9 @@ function drawLetter(letterData) {
     translate((rect3Angle / 4) + 50, - rect3Y + 100);
   }
     rotate(rect3Angle);
-    fill(153, 18, 101);
+    fill(darkPink);
     rect(0, 0, -rectLen, 3, 5);
-    fill(255, 105, 180);
+    fill(lightPink);
     rect(0, -1, -rectLen, 2, 5);
   pop();
 
@@ -128,9 +135,9 @@ function drawLetter(letterData) {
       translate((-rect3Angle / 4) + 50, - rect3Y + 100);
     }
       rotate(-rect3Angle);
-      fill(130);
+      fill(baseGrey + 90);
       rect(0, 0, rectLen, 3, 5);
-      fill(240);
+      fill(baseGrey - 20);
       rect(0, -1, rectLen, 2, 5);
     pop();
   }
@@ -143,35 +150,35 @@ function drawLetter(letterData) {
 
     strokeWeight(1);
     stroke(84, 13, 57);
-    fill(153, 18, 101);
+    fill(darkPink);
 
     rect(3 + rectGap, 0, 3, (rect2X * 0.6) + 30, 5);
     for (i = 0; i < (30 + rect2X * 0.6) / 12; i ++) {
       noStroke();
-      fill(255, 105, 180);
+      fill(lightPink);
       rect(3 + rectGap, i * 6, 3, 3);
       rect(3 + rectGap, -i * 6, 3, 3);
       fill(252, 128, 205);
       rect(3 + rectGap, i * 6 - 2, 3, 1);
       rect(3 + rectGap, -i * 6 - 2, 3, 1);
     }
-    fill(210);
+    fill(baseGrey + 60);
     rect(2 - rectGap, 0, 0.5, rect2X + 25, 5);
 
-    fill(80);
-    stroke(50);
+    fill(baseGrey - 70);
+    stroke(baseGrey - 100);
 
     rect(3 - rectGap, 0, 3, rect2X + 30, 5);
     for (i = 0; i < (30 + rect2X) / 12; i ++) {
       noStroke();
-      fill(150);
+      fill(baseGrey);
       rect(3 - rectGap, i * 6, 3, 3);
       rect(3 - rectGap, -i * 6, 3, 3);
-      fill(190);
+      fill(baseGrey + 40);
       rect(3 - rectGap, i * 6 - 2, 3, 1);
       rect(3 - rectGap, -i * 6 - 2, 3, 1);
     }
-    fill(210);
+    fill(baseGrey + 60);
     rect(2 - rectGap, 0, 0.5, rect2X + 25, 5);
   pop();
 
@@ -180,21 +187,21 @@ function drawLetter(letterData) {
     translate(rect1X, 100);
     rotate(-rect1Angle);
     if (rectWidth != 0) {
-      fill(80);
-      stroke(50);
+      fill(baseGrey - 70);
+      stroke(baseGrey - 100);
       strokeWeight(1);
     }
     rect(0, 0, rectWidth, 30 + rect1X, 5);
     for (i = 0; i < (30 + rect1X) / 12; i ++) {
       noStroke();
-      fill(150);
+      fill(baseGrey);
       rect(0, i * 6, rectWidth, 3);
       rect(0, -i * 6, rectWidth, 3);
-      fill(190);
+      fill(baseGrey + 40);
       rect(0, i * 6 - 2, rectWidth, 1);
       rect(0, -i * 6 - 2, rectWidth, 1);
     }
-    fill(200);
+    fill(baseGrey + 50);
     rect(rectWidth / 3 * -1, 0, rectWidth / 3, 28 + rect1X, 5);
   pop();
 
