@@ -9,13 +9,6 @@ const strokeColor      = "#ffffff";
 const darkBlue  = "#faa9f0";
 const lightBlue  = "#faa9a9";
 
-/*
- * Draw the letter given the letterData
- *
- * Letters should always be drawn with the
- * following bounding box guideline:
- * from (0,0) to (100, 200)
- */
 function drawLetter(letterData) {
   // color/stroke setup
   stroke(strokeColor);
@@ -42,8 +35,6 @@ function drawLetter(letterData) {
   fill(0);
   noStroke();
   rectMode(CENTER);
-  // rect(0, 100, 30, 150, 5);
-  // push();
   angleMode(DEGREES);
   stroke(0);
   strokeWeight(3);
@@ -91,20 +82,6 @@ function drawLetter(letterData) {
     rotate(cirRot);
     push();
       translate(34, 0);
-      // stroke(180);
-      // strokeWeight(0.25);
-      // circle(0, 0, 60);
-
-      // let c3 = color(0, 0, 0, 255);
-      // let c4 = color(0, 0, 0, 0);
-      // for (i = 0; i < 10; i ++) {
-      //   let gradient2 = lerpColor(c3, c4, i / 10);
-      //   noFill();
-      //   strokeWeight(1);
-      //   stroke(gradient2);
-      //   circle(0, 0, 40 + i);
-      // }
-      // fill(10);
       circle(0, 0, 60);
       push();
         translate(0, 35);
@@ -115,15 +92,6 @@ function drawLetter(letterData) {
     rotate(cirRot / 2);
     translate(34, 0);
 
-    // Booleen Circle Resizeable
-    // for (i = 0; i < 10; i ++) {
-    //   let gradient2 = lerpColor(c3, c4, i / 10);
-    //   noFill();
-    //   strokeWeight(1);
-    //   stroke(gradient2);
-    //   circle(0, 0, rectTran1 + 25 + i);
-    // }
-    // fill(10);
     circle(0, 0, rectTran1 + 25);
     
     // White Circle
@@ -190,8 +158,7 @@ function drawLetter(letterData) {
     }
     fill(210);
     rect(2 - rectGap, 0, 0.5, rectTran0 + 25, 5);
-    
-    // fill(255);
+
     fill(80);
     stroke(50);
 
@@ -207,12 +174,6 @@ function drawLetter(letterData) {
     }
     fill(210);
     rect(2 - rectGap, 0, 0.5, rectTran0 + 25, 5);
-
-    // if (rectGap == 0) {
-    //   fill(255);
-    // } else {
-    //   fill(255, 105, 180);
-    // }
   pop();
 
   // Single Line Rectangle
@@ -238,45 +199,13 @@ function drawLetter(letterData) {
     rect(rectWidth / 3 * -1, 0, rectWidth / 3, 28 + rectTran1, 5);
   pop();
 
-    // Inner Blade Shadow
-    // let c3 = color(0, 0, 0, 255);
-    // let c4 = color(0, 0, 0, 0);
-    for (i = 0; i < 10; i ++) {
-      let gradient2 = lerpColor(c3, c4, i / 10);
-      noFill();
-      strokeWeight(1);
-      stroke(gradient2);
-      circle(50, 100, 80 - i * 2);
-    }
-
-
-
-  // rotate(34);
-  // translate(20, -17);
-  // quad(0, 180, 0, 40, 30, 20, 30, 160);
-  // // pop();
-  // push();
-  // rotate(quadRot);
-  // quad(quadPosX, quadPosY, quadPosX + 40, quadPosY - 20, quadPosX + 80, quadPosY, quadPosX + 40, quadPosY + 20);
-  // pop();
-  // fill(darkBlue);
-  // ellipse(pos1x, pos1y, size1);
-  // fill(lightBlue);
-  // ellipse(pos2x, pos2y, size2);
-  // fill(darkBlue);
-  // ellipse(pos3x, pos3y, size3);
-
-  // rect(15, 180, 32, 5, 1);
-  // rect(15, 20, 32, 5, 1);
-  // noFill();
-  // stroke(0);
-  // strokeWeight(1);
-  // circle(cirX1, cirY1, rad1);
-  // ellipse(cirX2, cirY2, rad2a, rad2b);
-
-  // stroke("#caf0f8");
-  // strokeWeight(30);
-  // ellipse(cirX2, cirY2, rad2a + 32, rad2b + 32);
+  for (i = 0; i < 10; i ++) {
+    let gradient2 = lerpColor(c3, c4, i / 10);
+    noFill();
+    strokeWeight(1);
+    stroke(gradient2);
+    circle(50, 100, 80 - i * 2);
+  }
 }
 
 function interpolate_letter(percent, oldObj, newObj) {

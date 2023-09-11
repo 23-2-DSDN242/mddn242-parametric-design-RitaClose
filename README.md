@@ -4,6 +4,10 @@
 
 (Replace this README with information about your alphabet. This is an example.)
 
+Your Typeface Name
+* Your Name
+ * A description of your overall design process that serves as your design journal (suggested: 300-600 words)
+
 Each of my letters is composed with two circles. The size and position of the first circle is fixed, but the location and size of the second circle is controlled by three parameters.
 
 The three parameters per letter:
