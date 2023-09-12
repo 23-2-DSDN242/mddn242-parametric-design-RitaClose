@@ -12,6 +12,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 1.5,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "A": {
     "cirRot": 320.4,
@@ -26,6 +27,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "B": {
     "cirRot": 185,
@@ -40,6 +42,7 @@ const alphabet = {
     "cirStroke": 4,
     "rectWidth": 3,
     "coverCir": 20,
+    "arcLen": 0,
   },
   "C": {
     "cirRot": 360,
@@ -54,6 +57,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "D": {
     "cirRot": 118.8,
@@ -68,6 +72,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "E": {
     "cirRot": 356.4,
@@ -81,7 +86,8 @@ const alphabet = {
     "rectGap": 2,
     "rectWidth": 3,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "F": {
     "cirRot": 43.19,
@@ -95,7 +101,8 @@ const alphabet = {
     "rectGap": 3,
     "rectWidth": 0,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "G": {
     "cirRot": 334.8,
@@ -110,6 +117,7 @@ const alphabet = {
     "cirStroke": 2,
     "rectWidth": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "H": {
     "cirRot": 324,
@@ -124,6 +132,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "I": {
     "cirRot": 360,
@@ -137,7 +146,8 @@ const alphabet = {
     "rectGap": 0,
     "rectWidth": 0,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "J": {
     "cirRot": 237.6,
@@ -152,6 +162,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 28,
+    "arcLen": 0,
   },
   "K": {
     "cirRot": 0,
@@ -165,7 +176,8 @@ const alphabet = {
     "rectGap": 2,
     "rectWidth": 0,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "L": {
     "cirRot": 302.4,
@@ -180,6 +192,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "M": {
     "cirRot": 306,
@@ -193,7 +206,8 @@ const alphabet = {
     "rectGap": -17,
     "rectLen": 36,
     "rect3Angle": -63,
-    "rect3Y": 28
+    "rect3Y": 28,
+    "arcLen": 0,
   },
   "N": {
     "cirRot": 82.8,
@@ -208,6 +222,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 4,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "O": {
     "cirRot": 216,
@@ -222,6 +237,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "P": {
     "cirRot": 212.39,
@@ -236,6 +252,7 @@ const alphabet = {
     "cirStroke": 3,
     "rectWidth": 3,
     "coverCir": 20,
+    "arcLen": 0,
   },
   "Q": {
     "cirRot": 25.2,
@@ -250,6 +267,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "R": {
     "cirRot": 212.39,
@@ -264,6 +282,7 @@ const alphabet = {
     "cirStroke": 3,
     "rectWidth": 3,
     "coverCir": 20,
+    "arcLen": 0,
   },
   "S": {
     "cirRot": 360,
@@ -278,6 +297,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "T": {
     "cirRot": 273.6,
@@ -292,6 +312,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "U": {
     "cirRot": 180,
@@ -306,6 +327,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 22,
+    "arcLen": 0,
   },
   "V": {
     "cirRot": 360,
@@ -320,6 +342,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "W": {
     "cirRot": 216,
@@ -334,6 +357,7 @@ const alphabet = {
     "rectWidth": 3,
     "cirStroke": 0,
     "coverCir": 56,
+    "arcLen": 0,
   },
   "X": {
     "cirRot": 190.8,
@@ -348,6 +372,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 3,
     "coverCir": 18,
+    "arcLen": 0,
   },
   "Y": {
     "cirRot": 360,
@@ -362,6 +387,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "Z": {
     "cirRot": 360,
@@ -376,6 +402,7 @@ const alphabet = {
     "cirStroke": 1.5,
     "rectWidth": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "0": {
     "cirRot": 0,
@@ -389,7 +416,8 @@ const alphabet = {
     "rectGap": 0,
     "rectWidth": 0,
     "cirStroke": 0.89,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "1": {
     "cirRot": 360,
@@ -404,6 +432,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "2": {
     "cirRot": 360,
@@ -418,6 +447,7 @@ const alphabet = {
     "rectWidth": 3,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "3": {
     "cirRot": 360,
@@ -431,7 +461,8 @@ const alphabet = {
     "rectGap": 4,
     "rectWidth": 3,
     "cirStroke": 2.19,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "4": {
     "cirRot": 360,
@@ -446,6 +477,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "5": {
     "cirRot": 360,
@@ -459,7 +491,8 @@ const alphabet = {
     "rectGap": 19,
     "rectWidth": 0,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "6": {
     "cirRot": 0,
@@ -474,6 +507,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "7": {
     "cirRot": 0,
@@ -488,6 +522,7 @@ const alphabet = {
     "rectWidth": 3,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   },
   "8": {
     "cirRot": 0,
@@ -501,7 +536,8 @@ const alphabet = {
     "rectGap": -4,
     "rectWidth": 3,
     "cirStroke": 0,
-    "coverCir": 0
+    "coverCir": 0,
+    "arcLen": 0,
   },
   "9": {
     "cirRot": 360,
@@ -516,6 +552,7 @@ const alphabet = {
     "rectWidth": 0,
     "cirStroke": 0,
     "coverCir": 0,
+    "arcLen": 0,
   }
 
 }

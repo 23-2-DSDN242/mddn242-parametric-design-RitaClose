@@ -38,6 +38,8 @@ function drawLetter(letterData) {
   let cirStroke = letterData['cirStroke'];
   let coverCir = letterData['coverCir'];
 
+  let arcLen = letterData['arcLen'];
+
   // draw two circles
   rectMode(CENTER);
   angleMode(DEGREES);
@@ -94,22 +96,32 @@ function drawLetter(letterData) {
         circle(0, 0, coverCir);
       pop();
     pop();
-    push();
-    rotate(cirRot / 2);
-    translate(34, 0);
-
-    circle(0, 0, rect1X + 25);
     
-    // White Circle
-    if (cirRad == 0) {
-      noStroke();
-      noFill();
-    } else {
-      stroke(255);
-      strokeWeight(cirStroke);
-    }
-    circle(0, 0, cirRad);
+    push();
+      rotate(cirRot / 2);
+      translate(34, 0);
+      circle(0, 0, rect1X + 25);
+      
+      // White Circle
+      if (cirRad == 0) {
+        noStroke();
+        noFill();
+      } else {
+        stroke(255);
+        strokeWeight(cirStroke);
+      }
+      circle(0, 0, cirRad);
     pop();
+    // let arcLen = 10;
+    noFill();
+    stroke(255);
+    strokeWeight(arcLen / 5);
+    arc(0, 0, 115, 115, 0 - arcLen, 0 + arcLen);
+    arc(0, 0, 115, 115, 180 - arcLen, 180 + arcLen);
+    stroke(lightPink);
+    arc(0, 0, 115, 115, 0, 0 + 5 + arcLen);
+    arc(0, 0, 115, 115, 180, 180 + 5 + arcLen);
+    noStroke();
   pop();
 
   // Small Angle Rectangles
@@ -214,12 +226,42 @@ function drawLetter(letterData) {
   }
 }
 
+let reference = {
+  "cirRot": 306,
+  "rect1Angle": 21.59,
+  "rect1X": 30,
+  "rect3Angle": 0,
+  "rect3Y": 0,
+  "cirRad": 0,
+  "rect2X": 50,
+  "rectLen": 18,
+  "rectGap": -3,
+  "rectWidth": 0,
+  "cirStroke": 1.5,
+  "coverCir": 0,
+  "arcLen": 20,
+};
+
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
+  if (percent < 20) {
+    new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], reference["coverCir"]);
+  } else if (percent > 80) {
+    new_letter["coverCir"] = map(percent, 0, 100, reference["coverCir"], newObj["coverCir"]);
+  }
+
+  let arcSpeedMath = Math.abs(oldObj["cirRot"] - newObj["cirRot"]);
+  let arcSpeed = map(arcSpeedMath, 0, 360, 0, 40);
+
+  if (percent < 50){
+    new_letter["arcLen"] = map(percent, 0, 100, oldObj["arcLen"], arcSpeed);
+  } else {
+    new_letter["arcLen"] = map(percent, 0, 100, arcSpeed, newObj["arcLen"]);
+  }
+  
   new_letter["cirRot"] = map(percent, 0, 100, oldObj["cirRot"], newObj["cirRot"]);
   new_letter["rect1Angle"] = map(percent, 0, 100, oldObj["rect1Angle"], newObj["rect1Angle"]);
   new_letter["rect2X"] = map(percent, 0, 100, oldObj["rect2X"], newObj["rect2X"]);
-  new_letter["slant2Type"] = map(percent, 0, 100, oldObj["slant2Type"], newObj["slant2Type"]);
   new_letter["rect1X"] = map(percent, 0, 100, oldObj["rect1X"], newObj["rect1X"]);
   new_letter["rect3Angle"] = map(percent, 0, 100, oldObj["rect3Angle"], newObj["rect3Angle"]);
   new_letter["rect3Y"] = map(percent, 0, 100, oldObj["rect3Y"], newObj["rect3Y"]);
@@ -228,15 +270,16 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["rectGap"] = map(percent, 0, 100, oldObj["rectGap"], newObj["rectGap"]);
   new_letter["rectWidth"] = map(percent, 0, 100, oldObj["rectWidth"], newObj["rectWidth"]);
   new_letter["cirStroke"] = map(percent, 0, 100, oldObj["cirStroke"], newObj["cirStroke"]);
-  new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], newObj["coverCir"]);
+  // new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], newObj["coverCir"]);
   return new_letter;
 }
 
 var swapWords = [
-  "PINKAXES",
   "AXECRAFT",
   "QUESTING",
   "TOMAHAWK",
+  "SPITFIRE",
+  "KNIGHTLY",
 ]
 
 //if (percent < 50) // have new letter be going to different letter than end
