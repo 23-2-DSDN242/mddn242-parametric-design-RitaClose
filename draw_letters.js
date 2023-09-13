@@ -57,7 +57,7 @@ function drawLetter(letterData) {
   }
 
   //Blade Background (Grey Background)
-  fill(55);
+  fill(50);
   stroke(190);
   strokeWeight(3.5);
   circle(50, 100, 90 - arcLen);
@@ -123,6 +123,10 @@ function drawLetter(letterData) {
     //White Arcs
     arc(0, 0, 115, 115, 0 - arcLen, 0 + arcLen);
     arc(0, 0, 115, 115, 180 - arcLen, 180 + arcLen);
+
+    arc(0, 0, 120, 120, 10 - arcLen, 10 + arcLen);
+    arc(0, 0, 120, 120, 190 - arcLen, 190 + arcLen);
+
     stroke(lightPink);
     //Coloured Arcs
     arc(0, 0, 115, 115, 0, 0 + 5 + arcLen);
@@ -183,6 +187,7 @@ function drawLetter(letterData) {
       rect(3 + rectGap, i * 6 - 2, 3, 1);
       rect(3 + rectGap, -i * 6 - 2, 3, 1);
     }
+
     //Grey Rectangle
     fill(baseGrey + 60);
     rect(2 - rectGap, 0, 0.5, rect2X + 25, 5);
@@ -240,7 +245,7 @@ function drawLetter(letterData) {
 
 //Interpolation Reference
 let reference = {
-  "cirRot": 306,
+  "cirRot": 0,
   "rect1Angle": 21.59,
   "rect1X": 30,
   "rect3Angle": 0,
@@ -252,7 +257,7 @@ let reference = {
   "rectWidth": 0,
   "cirStroke": 1.5,
   "coverCir": 0,
-  "arcLen": 20,
+  "arcLen": 30,
   "ringColour": 59,
 };
 
@@ -285,7 +290,6 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["rectWidth"] = map(percent, 0, 100, oldObj["rectWidth"], newObj["rectWidth"]);
   new_letter["cirStroke"] = map(percent, 0, 100, oldObj["cirStroke"], newObj["cirStroke"]);
   new_letter["ringColour"] = map(percent, 0, 100, oldObj["ringColour"], newObj["ringColour"]);
-  // new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], newObj["coverCir"]);
   return new_letter;
 }
 

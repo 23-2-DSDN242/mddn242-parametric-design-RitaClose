@@ -16,6 +16,7 @@ Each of my letters is composed from 3 black circles which cut out the silver axe
   - **cirRad** : The Radius of the white inner circle.
   - **cirStroke** : The stroke of the white inner circle.
   - **coverCir** : Radius of 3rd outer black circle.
+  - **ringColor** : The Colour of the inside ring to show whether the outer blade is a part of the letter or not.
 #### Rectangle 1 Parameters:
   - **rect1X** : X Position of rectangle 1. Also changes the size of the second black outer circle.
   - **rectWidth** : Changes the width of rectangle 1.
@@ -27,6 +28,9 @@ Each of my letters is composed from 3 black circles which cut out the silver axe
   - **rectLen** : Length of rectangle 3, negative value makes one rect, positive value makes two.
   - **rect3Angle** : Changes rotation of rectangle 3, if it's split into two they will rotate in opposite directions.
   - **rect3Y** : Changes both Y Positions of rect 3.
+
+#### Interpolation Parameters:
+  - **arcLen** : Appears in relation to the circle Rotation parameter. The larger the distance the circle has to turn, the bigger the 'motion' arcs. Also changes the width of the inner blade ring during interpolation.
 
 ### Design Process
 
