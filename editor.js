@@ -2,6 +2,7 @@
 const sliderInfo = [
   //Outer Circles
   ["cirRot", 0, 360],
+  ["ringColour", 0, 59],
   //Inner Circle
   ["cirRad", 0, 80],
   ["cirStroke", 0, 3],
