@@ -127,7 +127,7 @@ function drawLetter(letterData) {
       circle(0, 0, cirRad);
     pop();
 
-    // Outer Velocity Based Arcs
+    // OUTER Velocity Based ARCS (Seen During Interpolation)
     noFill();
     stroke(255);
     strokeWeight(arcLen / 5);
@@ -254,41 +254,20 @@ function drawLetter(letterData) {
   }
 }
 
-//Interpolation Reference
-let reference = {
-  "cirRot": 0,
-  "rect1Angle": 21.59,
-  "rect1X": 30,
-  "rect3Angle": 0,
-  "rect3Y": 0,
-  "cirRad": 0,
-  "rect2X": 50,
-  "rectLen": 18,
-  "rectGap": -3,
-  "rectWidth": 0,
-  "cirStroke": 1.5,
-  "coverCir": 0,
-  "arcLen": 30,
-  "ringColour": 59,
-};
-
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
-  if (percent < 20) {
-    new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], reference["coverCir"]);
-  } else if (percent > 80) {
-    new_letter["coverCir"] = map(percent, 0, 100, reference["coverCir"], newObj["coverCir"]);
-  }
 
+  // Spinning Arc Transition
   let arcSpeedMath = Math.abs(oldObj["cirRot"] - newObj["cirRot"]);
   let arcSpeed = map(arcSpeedMath, 0, 360, 0, 50);
-
+  //Fade in and out
   if (percent < 50){
     new_letter["arcLen"] = map(percent, 0, 100, oldObj["arcLen"], arcSpeed);
   } else {
     new_letter["arcLen"] = map(percent, 0, 100, arcSpeed, newObj["arcLen"]);
   }
   
+  // Other Parameter Transitions
   new_letter["cirRot"] = map(percent, 0, 100, oldObj["cirRot"], newObj["cirRot"]);
   new_letter["rect1Angle"] = map(percent, 0, 100, oldObj["rect1Angle"], newObj["rect1Angle"]);
   new_letter["rect2X"] = map(percent, 0, 100, oldObj["rect2X"], newObj["rect2X"]);
@@ -301,6 +280,7 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["rectWidth"] = map(percent, 0, 100, oldObj["rectWidth"], newObj["rectWidth"]);
   new_letter["cirStroke"] = map(percent, 0, 100, oldObj["cirStroke"], newObj["cirStroke"]);
   new_letter["ringColour"] = map(percent, 0, 100, oldObj["ringColour"], newObj["ringColour"]);
+  new_letter["coverCir"] = map(percent, 0, 100, oldObj["coverCir"], newObj["coverCir"]);
   return new_letter;
 }
 
@@ -312,16 +292,3 @@ var swapWords = [
   "MECHANIC",
   "PRINGLES",
 ]
-
-//if (percent < 50) // have new letter be going to different letter than end
-//new_letter['coverCir'] = oldObj["coverCir"]; // stay as last position.
-// newpercent = percent * -1 for negative/opposite directions
-// look up easing functions.
-
-// copy default letter into draw_letters 
-/* let home_pos = {
-  defaultletter params.
-}
-then put percent 0-50 to home_pos then 50-100 to newPos
-
-*/
