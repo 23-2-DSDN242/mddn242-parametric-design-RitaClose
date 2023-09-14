@@ -1,20 +1,22 @@
 //SYSTEM VARIABLES
 var systemBackgroundColor = 10;
-var systemLineColor = "#414241";
-var systemBoxColor = "#00c800";
-const backgroundColor  = 10;
-const strokeColor      = "#ffffff";
+var systemLineColor = "#212121";
+var systemBoxColor = "#ffffff";
+const backgroundColor = 10;
+// const strokeColor = "#ffffff";
+
 
 function drawLetter(letterData) {
-  
+
   //COLOUR VARIABLES
   const outerCircle = backgroundColor;
   colorMode(HSB);
-  let millisec = second() * 10;
-  var pink = 10 + millisec;
+  let sec = second() * 6;
+  var pink = sec;
   var lightPink = color(pink, 59, 100);
   var darkPink = color(pink - 10, 88, 60);
   var shadowPink = color(pink - 10, 85, 33);
+  var complementaryColor = color(pink + 80, 85, 90);
   colorMode(RGB);
   var baseGrey = 150;
 
@@ -44,16 +46,25 @@ function drawLetter(letterData) {
   rectMode(CENTER);
   angleMode(DEGREES);
 
-  //OUTER BLADE (Static Silver Circle)
-
-  let c1 = color(255, 255, 255, 255);
-  let c2 = color(255, 255, 255, 0);
+  //BackgroundCircle (Seen in Interpolation)
+  stroke(complementaryColor);
   noFill();
   strokeWeight(1);
+  for (i = 0; i < 20; i ++) {
+    let gradient1 = lerpColor(complementaryColor, shadowPink, i / 10);
+    stroke(gradient1);
+    circle(50, 100, 80 + i);
+  }
+  circle(50, 100, 100);
+
+
+  //OUTER BLADE (Static Silver Circle)
+  let c1 = color(255, 255, 255, 255);
+  let c2 = color(255, 255, 255, 0);
   for (i = 0; i < 10; i ++) {
     let gradient1 = lerpColor(c1, c2, i / 10);
     stroke(gradient1);
-    circle(50, 100, 94 + i);
+    circle(50, 100, (arcLen * 0.2) + 94 + i);
   }
 
   //Blade Background (Grey Background)
@@ -270,7 +281,7 @@ function interpolate_letter(percent, oldObj, newObj) {
   }
 
   let arcSpeedMath = Math.abs(oldObj["cirRot"] - newObj["cirRot"]);
-  let arcSpeed = map(arcSpeedMath, 0, 360, 0, 40);
+  let arcSpeed = map(arcSpeedMath, 0, 360, 0, 50);
 
   if (percent < 50){
     new_letter["arcLen"] = map(percent, 0, 100, oldObj["arcLen"], arcSpeed);
