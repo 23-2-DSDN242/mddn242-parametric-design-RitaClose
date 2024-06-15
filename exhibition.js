@@ -7,7 +7,7 @@ if (typeof systemBackgroundColor === 'undefined') {
     var systemBackgroundColor = "#e3eded";
 }
 
-const canvasWidth = 960;
+const canvasWidth = 1920;
 const canvasHeight = 500;
 
 // these variables are used for animation
@@ -215,7 +215,7 @@ function draw () {
   background(systemBackgroundColor);
 
   // shorthand variables to allow margin
-  var o = 20
+  var o = 200
   var w2 = width - 2 * o
   var h2 = height - 2 * o
   for(var i=0; i<8; i++) {
