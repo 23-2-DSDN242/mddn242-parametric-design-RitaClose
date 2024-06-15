@@ -215,7 +215,7 @@ function draw () {
   background(systemBackgroundColor);
 
   // shorthand variables to allow margin
-  var o = 200
+  var o = 20
   var w2 = width - 2 * o
   var h2 = height - 2 * o
   for(var i=0; i<8; i++) {
