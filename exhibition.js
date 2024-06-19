@@ -7,7 +7,7 @@ if (typeof systemBackgroundColor === 'undefined') {
     var systemBackgroundColor = "#e3eded";
 }
 
-const canvasWidth = 1536;
+const canvasWidth = 1200;
 const canvasHeight = 500;
 
 // these variables are used for animation
